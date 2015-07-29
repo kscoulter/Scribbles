@@ -1,0 +1,7 @@
+<h1>Edit Post</h1>
+
+<%= render partial: "form" %>
+
+<%= form_for @post, method: :delete do |f| %>
+  <%= f.submit "Delete Post!" %>
+<% end %>

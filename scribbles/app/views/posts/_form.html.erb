@@ -1,0 +1,17 @@
+<%= form_for(@post) do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :image_url, "Image URL" %>
+  <%= f.text_field :image_url %>
+
+  <%= f.label :datetime, "Date Posted" %>
+  <%= f.text_field :datetime %>
+
+  <%= f.label :content, "Post" %>
+  <%= f.text_field :content %>
+
+  <%= f.submit %>
+
+<% end  %>
