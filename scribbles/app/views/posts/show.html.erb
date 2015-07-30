@@ -1,4 +1,19 @@
 <h1><%= @post.title %></h1>
 <h2><%= @post.datetime %></h2>
+<%= puts "*" * 90 %>
+<%= puts @post.datetime %>
 <img src="<%= @post.image_url %>" />
-<article><%= @post.content %></article>
+<article><%= simple_format(@post.content, {}, :sanitize => false) %></article>
+
+
+<!-- Show comments -->
+<div>
+  <% @post.comments.each do |comment| %>
+  <div class="username">
+    <%= comment.user_name %>
+  </div>
+    <p><%= comment.comment %></p>
+    <%=link_to "Edit Comment", edit_post_comment_path([comment.post,comment])%>
+  <%end%>
+</div>
+<%= render partial: "comments/form" %>

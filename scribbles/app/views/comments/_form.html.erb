@@ -1,0 +1,14 @@
+<%= form_for([@post, @post.comments.build]) do |f| %>
+
+  <%= f.label :user_name, "User Name" %>
+  <%= f.text_field :user_name %>
+
+  <%= f.label :datetime, "Date" %>
+  <%= f.text_field :datetime %>
+
+  <%= f.label :comment %>
+  <%= f.text_field :comment %>
+
+  <%= f.submit %>
+
+<% end  %>
