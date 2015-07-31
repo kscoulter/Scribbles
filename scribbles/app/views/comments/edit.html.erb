@@ -1,1 +1,20 @@
 <h2>Edit Comment</h2>
+<%= form_for [@post, @comment] do |f| %>
+
+  <%= f.label :user_name, "User Name" %>
+  <%= f.text_field :user_name %>
+
+  <%= f.label :datetime, "Date" %>
+  <%= f.text_field :datetime %>
+
+  <%= f.label :comment %>
+  <%= f.text_field :comment %>
+
+  <%= f.submit %>
+
+<% end  %>
+
+<!-- Delete Comment -->
+<%= form_for [@post, @comment], method: :delete do |f| %>
+  <%= f.submit "Delete Comment" %>
+<% end %>
